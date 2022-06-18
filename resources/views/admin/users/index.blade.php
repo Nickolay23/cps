@@ -8,8 +8,8 @@
             <thead class="table-secondary">
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Имя</th>
-                    <th scope="col">E-mail</th>
+                    <<th scope="col">{{__('Name')}}</th>
+                    <th scope="col">{{__('Email')}}</th>
                 </tr>
             </thead>
             <tbody>
