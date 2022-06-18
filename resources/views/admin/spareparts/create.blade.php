@@ -68,6 +68,14 @@
                 </div>
             </div>
         </div>
+        <div class="mb-3">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-10">
+                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#addPartmanufacturer">{{__('Add part manufacturer')}}</button>
+                </div>
+            </div>
+        </div>
         <button type="submit" class="btn btn-primary">{{__('Save')}}</button>
     </form>
 
@@ -77,6 +85,29 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">{{__('Add car model')}}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="{{__('Close')}}"></button>
+                </div>
+                <div class="modal-body">
+
+                    <form>
+                        <select>
+                            <option>Модель авто</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Close')}}</button>
+                    <button type="button" class="btn btn-primary">{{__('Save')}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Модальное окно -->
+    <div class="modal fade" id="addPartmanufacturer" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">{{__('Add part manufacturer')}}</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="{{__('Close')}}"></button>
                 </div>
                 <div class="modal-body">

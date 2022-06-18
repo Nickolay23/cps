@@ -7,7 +7,7 @@
         @if (auth()->user()->is_admin)
             <li class="nav-title">{{__('Admin')}}</li>
             <li class="nav-group">
-                <a class="nav-link" href="{{route('admin.pages.index')}}">
+                <a class="nav-link text-wrap" href="{{route('admin.pages.index')}}">
                     <svg class="nav-icon">
                         <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-puzzle"></use>
                     </svg>
@@ -15,7 +15,7 @@
                 </a>
             </li>
             <li class="nav-group">
-                <a class="nav-link" href="{{route('admin.users.index')}}">
+                <a class="nav-link text-wrap" href="{{route('admin.users.index')}}">
                     <svg class="nav-icon">
                         <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-puzzle"></use>
                     </svg>
@@ -23,7 +23,7 @@
                 </a>
             </li>
             <li class="nav-group">
-                <a class="nav-link" href="{{route('admin.categories.index')}}">
+                <a class="nav-link text-wrap" href="{{route('admin.categories.index')}}">
                     <svg class="nav-icon">
                         <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-puzzle"></use>
                     </svg>
@@ -31,7 +31,7 @@
                 </a>
             </li>
             <li class="nav-group">
-                <a class="nav-link" href="{{route('admin.spareparts.index')}}">
+                <a class="nav-link text-wrap" href="{{route('admin.spareparts.index')}}">
                     <svg class="nav-icon">
                         <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-puzzle"></use>
                     </svg>
@@ -39,7 +39,7 @@
                 </a>
             </li>
             <li class="nav-group">
-                <a class="nav-link" href="{{route('admin.manufacturers.index')}}">
+                <a class="nav-link text-wrap" href="{{route('admin.manufacturers.index')}}">
                     <svg class="nav-icon">
                         <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-puzzle"></use>
                     </svg>
@@ -47,11 +47,19 @@
                 </a>
             </li>
             <li class="nav-group">
-                <a class="nav-link" href="{{route('admin.carmodels.index')}}">
+                <a class="nav-link text-wrap" href="{{route('admin.carmodels.index')}}">
                     <svg class="nav-icon">
                         <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-puzzle"></use>
                     </svg>
                     {{__('Car models')}}
+                </a>
+            </li>
+            <li class="nav-group">
+                <a class="nav-link text-wrap" href="{{route('admin.partmanufacturers.index')}}">
+                    <svg class="nav-icon">
+                        <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-puzzle"></use>
+                    </svg>
+                    {{__('Part manufacturers')}}
                 </a>
             </li>
         @endif

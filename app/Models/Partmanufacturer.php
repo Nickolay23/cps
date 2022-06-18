@@ -5,19 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Partmanufacturer extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'code',
-        'name',
+        'part_manufacturer',
         'description',
         'image',
     ];
 
     public function spareparts()
     {
-        return $this->hasMany(Sparepart::class);
+        return $this->belongsToMany(Sparepart::class);
     }
 }
