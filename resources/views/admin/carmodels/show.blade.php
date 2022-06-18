@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
     <h3>{{$carmodel->name .' '. $carmodel->generation . ' (' . $carmodel->start_year . '-' . $carmodel->finish_year . ')'}}</h3>

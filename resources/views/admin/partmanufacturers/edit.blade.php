@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
     <h3>{{__('Edit manufacturer')}} {{$partmanufacturer->partmanufacturer}}</h3>
