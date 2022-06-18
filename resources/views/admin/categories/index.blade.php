@@ -13,7 +13,7 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">{{__('Name')}}</th>
-                <th scope="col">{{__('Email')}}</th>
+                <th scope="col">{{__('Code')}}</th>
                 <th scope="col">{{__('Actions')}}</th>
             </tr>
             </thead>
