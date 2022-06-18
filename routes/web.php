@@ -32,6 +32,7 @@ Route::group(['middleware' => 'auth'], function (){
         Route::resource('users', \App\Http\Controllers\Admin\UserController::class);
         Route::resource('categories', \App\Http\Controllers\Admin\CategoryController::class);
         Route::resource('spareparts', \App\Http\Controllers\Admin\SparepartController::class);
+        Route::resource('manufacturers', \App\Http\Controllers\Admin\ManufacturerController::class);
     });
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 });
