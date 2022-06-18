@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+    <h3>{{__('Edit sparepart')}} {{$sparepart->name}}</h3>
+    <div class="mb-4 d-flex justify-content-end">
+        <a href="{{route('admin.spareparts.index')}}" class="btn btn-dark" role="button">{{__('Sparepart list')}}</a>
+    </div>
     <form action="{{route('admin.spareparts.update', $sparepart)}}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')

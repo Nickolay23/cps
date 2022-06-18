@@ -3,7 +3,7 @@
 @section('content')
     <div>
         <h3>{{__('Manufacturers list')}}</h3>
-        <div class="float-end">
+        <div class="mb-4 d-flex justify-content-end">
             <a href="{{route('admin.manufacturers.create')}}" class="btn btn-dark" role="button">{{__('Add manufacturer')}}</a>
         </div>
 

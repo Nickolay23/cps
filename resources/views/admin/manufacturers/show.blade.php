@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <h3>{{$manufacturer->name}}</h3>
-    <div class="float-end">
+    <h3>{{$manufacturer->manufacturer}}</h3>
+    <div class="mb-4 d-flex justify-content-end">
         <a href="{{route('admin.manufacturers.index')}}" class="btn btn-dark" role="button">{{__('Manufacturers list')}}</a>
     </div>
     <table class="table">

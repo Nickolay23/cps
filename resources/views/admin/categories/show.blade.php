@@ -2,7 +2,7 @@
 
 @section('content')
     <h3>{{$category->name}}</h3>
-    <div class="float-end">
+    <div class="mb-4 d-flex justify-content-end">
         <a href="{{route('admin.categories.index')}}" class="btn btn-dark" role="button">{{__('Category list')}}</a>
     </div>
     <table class="table">

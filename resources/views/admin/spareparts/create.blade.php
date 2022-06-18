@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+    <h3>{{__('Create sparepart card')}}</h3>
+    <div class="mb-4 d-flex justify-content-end">
+        <a href="{{route('admin.spareparts.index')}}" class="btn btn-dark" role="button">{{__('Sparepart list')}}</a>
+    </div>
     <form action="{{route('admin.spareparts.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="row mb-3">
@@ -56,6 +60,38 @@
                 <input type="file" name="image" class="form-control" id="image">
             </div>
         </div>
+        <div class="mb-3">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-10">
+                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#addCarmodel">{{__('Add car model')}}</button>
+                </div>
+            </div>
+        </div>
         <button type="submit" class="btn btn-primary">{{__('Save')}}</button>
     </form>
+
+    <!-- Модальное окно -->
+    <div class="modal fade" id="addCarmodel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">{{__('Add car model')}}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="{{__('Close')}}"></button>
+                </div>
+                <div class="modal-body">
+
+                    <form>
+                        <select>
+                            <option>Модель авто</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Close')}}</button>
+                    <button type="button" class="btn btn-primary">{{__('Save')}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection

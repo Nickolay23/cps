@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+    <h3>{{__('Edit category')}} {{$category->name}}</h3>
+    <div class="mb-4 d-flex justify-content-end">
+        <a href="{{route('admin.categories.index')}}" class="btn btn-dark" role="button">{{__('Category list')}}</a>
+    </div>
     <form action="{{route('admin.categories.update', $category)}}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')

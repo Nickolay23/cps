@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.5.5/css/perfect-scrollbar.css" integrity="sha512-2xznCEl5y5T5huJ2hCmwhvVtIGVF1j/aNUEJwi/BzpWPKEzsZPGpwnP1JrIMmjPpQaVicWOYVu8QvAIg9hwv9w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
     <title>{{ config('app.name', 'Laravel') }}</title>
 </head>
 <body class="c-app">

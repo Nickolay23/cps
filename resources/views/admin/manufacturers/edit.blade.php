@@ -1,10 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+    <h3>{{__('Edit manufacturer')}} {{$manufacturer->manufacturer}}</h3>
+    <div class="mb-4 d-flex justify-content-end">
+        <a href="{{route('admin.manufacturers.index')}}" class="btn btn-dark" role="button">{{__('Manufacturers list')}}</a>
+    </div>
     <form action="{{route('admin.manufacturers.update', $manufacturer)}}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
-        <h3>{{__('Edit manufacturer')}} {{$manufacturer->name}}</h3>
         <div class="row mb-3">
             <label for="manufacturer" class="col-sm-2 col-form-label">{{__('Manufacturer')}}</label>
             <div class="col-sm-10">

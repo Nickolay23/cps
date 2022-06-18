@@ -1,9 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class="mb-4 d-flex justify-content-end">
+        <a href="{{route('admin.carmodels.index')}}" class="btn btn-dark" role="button">{{__('Car models list')}}</a>
+    </div>
     <form action="{{route('admin.carmodels.update', $carmodel)}}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
+        <h3>{{__('Edit car model') . ' ' . $carmodel->name .' '. $carmodel->generation . ' (' . $carmodel->start_year . '-' . $carmodel->finish_year . ')'}}</h3>
         <div class="row mb-3">
             <label for="manufacturer_id" class="col-sm-2 col-form-label">{{__('Manufacturer')}}</label>
             <div class="col-sm-10">
