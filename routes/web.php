@@ -31,6 +31,7 @@ Route::group(['middleware' => 'auth'], function (){
         Route::resource('pages', \App\Http\Controllers\Admin\PageController::class);
         Route::resource('users', \App\Http\Controllers\Admin\UserController::class);
         Route::resource('categories', \App\Http\Controllers\Admin\CategoryController::class);
+        Route::resource('spareparts', \App\Http\Controllers\Admin\SparepartController::class);
     });
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 });

@@ -36,6 +36,6 @@
                 <input type="file" name="image" class="form-control" id="image">
             </div>
         </div>
-        <button type="submit" class="btn btn-primary">{{__('Save')}}</button>
+        <button type="submit" class="btn btn-primary">{{__('Update')}}</button>
     </form>
 @endsection
