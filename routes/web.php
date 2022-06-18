@@ -19,10 +19,14 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => 'auth'], function (){
     Route::group(['prefix' => 'admin', 'as' =>'admin.', 'middleware' => 'is_admin'], function () {
+        Route::get('/', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin');
         Route::resource('pages', \App\Http\Controllers\Admin\PageController::class);
+        Route::resource('users', \App\Http\Controllers\Admin\UserController::class);
+        Route::resource('categories', \App\Http\Controllers\Admin\CategoryController::class);
     });
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 });
