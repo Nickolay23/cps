@@ -1,24 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-    <form action="{{route('admin.categories.store')}}" method="POST" enctype="multipart/form-data">
+    <form action="{{route('admin.manufacturers.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="row mb-3">
-            <label for="name" class="col-sm-2 col-form-label">{{__('Name')}}</label>
+            <label for="manufacturer" class="col-sm-2 col-form-label">{{__('Manufacturer')}}</label>
             <div class="col-sm-10">
-                @error('name')
+                @error('manufacturer')
                 <div class="alert alert-danger pt-1 pb-1">{{$message}}</div>
                 @enderror
-                <input type="text" name="name" class="form-control" id="name" value="{{old('name')}}">
-            </div>
-        </div>
-        <div class="row mb-3">
-            <label for="code" class="col-sm-2 col-form-label">{{__('Code')}}</label>
-            <div class="col-sm-10">
-                @error('code')
-                <div class="alert alert-danger pt-1 pb-1">{{$message}}</div>
-                @enderror
-                <input type="text" name="code" class="form-control" id="code" value="{{old('code')}}">
+                <input type="text" name="manufacturer" class="form-control" id="manufacturer" value="{{old('manufacturer')}}">
             </div>
         </div>
         <div class="row mb-3">
