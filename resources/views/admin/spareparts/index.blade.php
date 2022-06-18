@@ -2,14 +2,13 @@
 
 @section('content')
     <div>
-        <h3>{{__('Category list')}}</h3>
+        <h3>{{__('Sparepart list')}}</h3>
         <div class="float-end">
-            @can('create', \App\Models\Category::class)
-                <a href="{{route('admin.categories.create')}}" class="btn btn-dark" role="button">{{__('Add category')}}</a>
+            @can('create', \App\Models\Sparepart::class)
+                <a href="{{route('admin.spareparts.create')}}" class="btn btn-dark" role="button">{{__('Add sparepart')}}</a>
             @endcan
         </div>
-
-        @if($categories->count() > 0)
+        @if($spareparts->count() > 0)
             <table class="table">
                 <thead class="table-secondary">
                 <tr>
@@ -20,19 +19,19 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($categories as $category)
+                @foreach($spareparts as $sparepart)
                     <tr>
                         <th scope="row">{{$loop->iteration}}</th>
-                        <td>{{$category->name}}</td>
-                        <td>{{$category->code}}</td>
+                        <td>{{$sparepart->name}}</td>
+                        <td>{{$sparepart->sku}}</td>
                         <td>
                             <div class="btn-group" role="group">
-                                <a href="{{route('admin.categories.show', $category)}}" class="m-1 btn btn-sm btn-success">{{__('Open')}}</a>
-                                @can('update', $category)
-                                    <a href="{{route('admin.categories.edit', $category)}}" class="m-1 btn btn-sm btn-warning">{{__('Edit')}}</a>
+                                <a href="{{route('admin.spareparts.show', $sparepart)}}" class="m-1 btn btn-sm btn-success">{{__('Open')}}</a>
+                                @can('update', $sparepart)
+                                    <a href="{{route('admin.spareparts.edit', $sparepart)}}" class="m-1 btn btn-sm btn-warning">{{__('Edit')}}</a>
                                 @endcan
-                                @can('delete', $category)
-                                    <form action="{{ route('admin.categories.destroy', $category) }}" method="POST">
+                                @can('delete', $sparepart)
+                                    <form action="{{ route('admin.spareparts.destroy', $sparepart) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button class="m-1 btn btn-sm btn-danger" type="submit"
@@ -46,7 +45,7 @@
                 </tbody>
             </table>
         @else
-            <div>{{__('No categories')}}</div>
+            <div>{{__('No spareparts')}}</div>
         @endif
     </div>
 @endsection
