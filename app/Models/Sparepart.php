@@ -22,4 +22,9 @@ class Sparepart extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+    public function carmodels()
+    {
+        return $this->belongsToMany(Carmodel::class)->withTimestamps();
+    }
 }

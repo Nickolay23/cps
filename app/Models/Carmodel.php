@@ -24,4 +24,9 @@ class Carmodel extends Model
     {
         return $this->belongsTo(Manufacturer::class);
     }
+
+    public function spareparts()
+    {
+        return $this->belongsToMany(Sparepart::class);
+    }
 }

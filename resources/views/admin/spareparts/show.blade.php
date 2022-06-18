@@ -2,7 +2,7 @@
 
 @section('content')
     <h3>{{$sparepart->name}}</h3>
-    <div class="float-end">
+    <div class="mb-4 d-flex justify-content-end">
         <a href="{{route('admin.spareparts.index')}}" class="btn btn-dark" role="button">{{__('Sparepart list')}}</a>
     </div>
     <table class="table">

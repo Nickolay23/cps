@@ -3,7 +3,7 @@
 @section('content')
     <div>
         <h3>{{__('Car models list')}}</h3>
-        <div class="float-end">
+        <div class="mb-4 d-flex justify-content-end">
             <a href="{{route('admin.carmodels.create')}}" class="btn btn-dark" role="button">{{__('Add car model')}}</a>
         </div>
 

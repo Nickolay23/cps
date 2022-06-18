@@ -3,7 +3,7 @@
 @section('content')
     <div>
         <h3>{{__('Category list')}}</h3>
-        <div class="float-end">
+        <div class="mb-4 d-flex justify-content-end">
             @can('create', \App\Models\Category::class)
                 <a href="{{route('admin.categories.create')}}" class="btn btn-dark" role="button">{{__('Add category')}}</a>
             @endcan
