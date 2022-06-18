@@ -34,6 +34,7 @@ Route::group(['middleware' => 'auth'], function (){
         Route::resource('spareparts', \App\Http\Controllers\Admin\SparepartController::class);
         Route::resource('manufacturers', \App\Http\Controllers\Admin\ManufacturerController::class);
         Route::resource('carmodels', \App\Http\Controllers\Admin\CarmodelController::class);
+        Route::resource('partmanufacturers', \App\Http\Controllers\Admin\PartmanufacturerController::class);
     });
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 });

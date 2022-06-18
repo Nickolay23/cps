@@ -141,6 +141,7 @@ return [
         'manufacturer' => 'Производитель',
         'manufacturer_id' => 'Производитель',
         'name' => 'Название',
+        'part_manufacturer' => 'Производитель',
         'sku' => 'Артикул',
         'start_year' => 'Год начала производств',
         'finish_year' => 'Год окончания производства',

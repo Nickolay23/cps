@@ -27,4 +27,9 @@ class Sparepart extends Model
     {
         return $this->belongsToMany(Carmodel::class)->withTimestamps();
     }
+
+    public function partmanufacturers()
+    {
+        return $this->belongsToMany(Partmanufacturer::class)->withTimestamps();
+    }
 }

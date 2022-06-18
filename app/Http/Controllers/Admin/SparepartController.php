@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SparepartRequest;
 use App\Models\Category;
+use App\Models\Partmanufacturer;
 use App\Models\Sparepart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -32,7 +33,8 @@ class SparepartController extends Controller
         $this->authorize('create', Sparepart::class);
 
         $categories = Category::get();
-        return view('admin.spareparts.create', compact('categories'));
+        $partmanufacturers = Partmanufacturer::get();
+        return view('admin.spareparts.create', compact('categories', 'partmanufacturers'));
     }
 
     /**
@@ -77,7 +79,8 @@ class SparepartController extends Controller
         $this->authorize('update', $sparepart);
 
         $categories = Category::get();
-        return view('admin.spareparts.edit', compact('sparepart','categories'));
+        $partmanufacturers = Partmanufacturer::get();
+        return view('admin.spareparts.edit', compact('sparepart','categories', 'partmanufacturers'));
     }
 
     /**
