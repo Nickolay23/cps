@@ -6,12 +6,18 @@
         <div class="row mb-3">
             <label for="name" class="col-sm-2 col-form-label">{{__('Name')}}</label>
             <div class="col-sm-10">
+                @error('name')
+                <div class="alert alert-danger pt-1 pb-1">{{$message}}</div>
+                @enderror
                 <input type="text" name="name" class="form-control" id="name">
             </div>
         </div>
         <div class="row mb-3">
             <label for="code" class="col-sm-2 col-form-label">{{__('Code')}}</label>
             <div class="col-sm-10">
+                @error('code')
+                <div class="alert alert-danger pt-1 pb-1">{{$message}}</div>
+                @enderror
                 <input type="text" name="code" class="form-control" id="code">
             </div>
         </div>
