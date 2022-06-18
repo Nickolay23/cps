@@ -14,4 +14,9 @@ class Manufacturer extends Model
         'description',
         'image',
     ];
+
+    public function carmodels()
+    {
+        return $this->hasMany(Carmodel::class);
+    }
 }
