@@ -18,7 +18,7 @@ class Feature extends Model
     {
         return $this->belongsTo(FeatureGroup::class);
     }
-    
+
     public function spareparts()
     {
         return $this->belongsToMany(Sparepart::class);

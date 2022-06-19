@@ -9,6 +9,7 @@
     "Add part manufacturer": "Добавить производителя запчасти",
     "Add product": "Добавить товар",
     "Add sparepart": "Добавить автозапчасть",
+    "Add work": "Добавить услугу",
     "Amount": "Количество",
     "Attribute": "Атрибут",
     "Car models list": "Список моделей автомобилей",
@@ -33,6 +34,7 @@
     "Create manufacturer card": "Создать карточку производителя",
     "Create product card": "Создать карточку товара",
     "Create sparepart card": "Создать карточку автозапчасти",
+    "Create work": "Создать услугу",
     "Delete": "Удалить",
     "Description": "Описание",
     "Edit": "Редактировать",
@@ -43,6 +45,7 @@
     "Edit manufacturer": "Редактировать производителя",
     "Edit product": "Редактировать товар",
     "Edit sparepart": "Редактировать автозапчасть",
+    "Edit work": "Редактировать услугу",
     "Feature": "Характеристика",
     "Feature list": "Список характеристик",
     "Features": "Характеристики",
@@ -66,6 +69,7 @@
     "No feature groups": "Нет групп характеристик",
     "No manufacturers": "Нет производителей",
     "No spareparts": "Нет автозапчастей",
+    "No works": "Нет услуг",
     "Оnline_shop": "Интернет-магазин",
     "Open": "Открыть",
     "Part manufacturers": "Производители автозапчастей",
@@ -84,5 +88,8 @@
     "User list": "Список пользователей",
     "Users": "Пользователи",
     "Value": "Значение",
-    "VIN": "VIN"
+    "VIN": "VIN",
+    "Work": "Услуга",
+    "Works list": "Список услуг",
+    "Works": "Услуги"
 }

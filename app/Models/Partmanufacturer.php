@@ -10,7 +10,7 @@ class Partmanufacturer extends Model
     use HasFactory;
 
     protected $fillable = [
-        'part_manufacturer',
+        'partmanufacturer',
         'description',
         'image',
     ];
