@@ -32,4 +32,9 @@ class Sparepart extends Model
     {
         return $this->belongsToMany(Partmanufacturer::class)->withTimestamps();
     }
+
+    public function features()
+    {
+        return $this->belongsToMany(Feature::class)->withTimestamps();
+    }
 }
