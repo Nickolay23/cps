@@ -35,6 +35,9 @@ Route::group(['middleware' => 'auth'], function (){
         Route::resource('reviews', \App\Http\Controllers\Admin\ReviewController::class);
         Route::resource('suppliers', \App\Http\Controllers\Admin\SupplierController::class);
         Route::resource('orders', \App\Http\Controllers\Admin\OrdeController::class);
+        Route::resource('pays', \App\Http\Controllers\Admin\PayController::class);
+        Route::resource('incomes', \App\Http\Controllers\Admin\IncomeController::class);
+        Route::resource('outcomes', \App\Http\Controllers\Admin\OutcomeController::class);
     });
 
     Route::group([
@@ -46,6 +49,8 @@ Route::group(['middleware' => 'auth'], function (){
 });
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('index');
+Route::get('/order/create', [\App\Http\Controllers\OrderController::class, 'create'])->name('order-create');
+Route::post('/order/create', [\App\Http\Controllers\OrderController::class, 'confirm'])->name('order-confirm');
 Route::group([
     'prefix' => 'cart',
 ], function () {

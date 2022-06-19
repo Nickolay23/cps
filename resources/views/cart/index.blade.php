@@ -13,7 +13,7 @@
                 <th scope="col">{{__('Name')}}</th>
                 <th scope="col">{{__('Amount')}}</th>
                 <th scope="col">{{__('Price')}}</th>
-                <th scope="col">{{__('Actions')}}</th>
+                <th scope="col">{{__('Cost')}}</th>
             </tr>
             </thead>
             <tbody>
@@ -63,6 +63,9 @@
             </tr>
             </tfoot>
         </table>
+        <div class="mb-4 d-flex justify-content-end">
+            <a href="{{route('order-create')}}" class="btn btn-dark" role="button">{{__('Place an order')}}</a>
+        </div>
     @else
         <div>
             {{__('No products in cart')}}
