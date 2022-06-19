@@ -9,6 +9,12 @@ use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
+    public function index()
+    {
+        $categories = Category::get();
+        return view('order.index', compact('categories'));
+    }
+
     public function create()
     {
         $categories = Category::get();
@@ -28,7 +34,12 @@ class OrderController extends Controller
 
         $order = Order::find($orderId);
         $success = $order->saveOrder($request);
-        if(!$success){
+        if($success) {
+            session()->forget('orderId');
+            session()->forget('cartStatus');
+            session()->forget('cartItems');
+            session()->flash('success', 'Ваш заказ принят в обработку');
+        } else {
             session()->flash('warning', 'Произошла ошибка');
         }
         return redirect()->route('index');

@@ -45,6 +45,7 @@ Route::group(['middleware' => 'auth'], function (){
         'as' => 'users.',
     ], function () {
         Route::get('/', [App\Http\Controllers\User\ProfileController::class, 'index'])->name('home');
+        Route::get('/orders', [App\Http\Controllers\OrderController::class, 'index'])->name('order-index');
     });
 });
 

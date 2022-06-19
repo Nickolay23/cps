@@ -3,7 +3,6 @@
 @section('title', __('Placing order'))
 
 @section('content')
-{{--    @dd($order)--}}
     <table class="table">
         <thead class="table-secondary">
         <tr>
