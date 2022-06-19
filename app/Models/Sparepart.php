@@ -37,4 +37,9 @@ class Sparepart extends Model
     {
         return $this->belongsToMany(Feature::class)->withTimestamps();
     }
+
+    public function services()
+    {
+        return $this->belongsToMany(Service::class)->withTimestamps();
+    }
 }

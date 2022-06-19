@@ -13,4 +13,9 @@ class Work extends Model
         'name',
         'description'
     ];
+
+    public function services()
+    {
+        return $this->belongsToMany(Service::class);
+    }
 }

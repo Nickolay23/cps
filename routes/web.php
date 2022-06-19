@@ -38,6 +38,7 @@ Route::group(['middleware' => 'auth'], function (){
         Route::resource('featuregroups', \App\Http\Controllers\Admin\FeatureGroupController::class);
         Route::resource('features', \App\Http\Controllers\Admin\FeatureController::class);
         Route::resource('works', \App\Http\Controllers\Admin\WorkController::class);
+        Route::resource('services', \App\Http\Controllers\Admin\ServiceController::class);
     });
 
     Route::group([
