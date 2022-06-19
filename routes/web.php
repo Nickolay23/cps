@@ -35,6 +35,7 @@ Route::group(['middleware' => 'auth'], function (){
         Route::resource('manufacturers', \App\Http\Controllers\Admin\ManufacturerController::class);
         Route::resource('carmodels', \App\Http\Controllers\Admin\CarmodelController::class);
         Route::resource('partmanufacturers', \App\Http\Controllers\Admin\PartmanufacturerController::class);
+        Route::resource('featuregroups', \App\Http\Controllers\Admin\FeatureGroupController::class);
     });
 
     Route::group([

@@ -39,6 +39,14 @@
                 </a>
             </li>
             <li class="nav-group">
+                <a class="nav-link" href="{{route('admin.featuregroups.index')}}">
+                    <svg class="nav-icon">
+                        <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-puzzle"></use>
+                    </svg>
+                    {{__('Feature groups')}}
+                </a>
+            </li>
+            <li class="nav-group">
                 <a class="nav-link text-wrap" href="{{route('admin.manufacturers.index')}}">
                     <svg class="nav-icon">
                         <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-puzzle"></use>
