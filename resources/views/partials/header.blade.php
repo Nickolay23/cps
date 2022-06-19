@@ -14,7 +14,9 @@
             </ul>
         </div>
         <div class="flex-fill">
-            <p class="pt-2 pb-0">Zap82shop.ru</p>
+            <img src="{{ asset('storage/banners/abbr.png') }}" class="img-fluid" />
+{{--            <p class="pt-2 pb-0">Zap82shop.ru</p>--}}
+
         </div>
         <div class="flex-fill">
             <a href="#" class="justify-content-center nav-link link-dark">
@@ -30,30 +32,36 @@
                             <div>{{auth()->user()->name}}</div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end pt-0">
-                            <div class="dropdown-header bg-light py-2">
-                                <div class="fw-semibold">{{__('Account')}}</div>
-                            </div>
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
+{{--                            <div class="dropdown-header bg-light py-2">--}}
+{{--                                <div class="fw-semibold">{{__('Account')}}</div>--}}
+{{--                            </div>--}}
+                            <div class="nav">
+                                <a class="dropdown-item" href="{{route('users.home')}}">
+                                    <i class="bi bi-person"></i> {{__('Account')}}
+                                </a>
+                                <a class="dropdown-item" href="{{route('users.order-index')}}">
+                                    <i class="bi bi-journal-check"></i> {{__('Orders')}}
+                                </a>
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                          onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
-                                <svg class="icon me-2">
-                                    <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-account-logout"></use>
-                                </svg> {{ __('Logout') }}
-                            </a>
+                                    <i class="bi bi-box-arrow-left"></i> {{ __('Logout') }}
+                                </a>
 
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
                         </div>
                     </li>
                 </ul>
             @else
                 <ul class="nav justify-content-end">
                     <li class="nav-item">
-                        <a href="{{ route('login') }}" class="nav-link link-dark text-decoration-underline">{{__('Login')}}</a>
+                        <a href="{{ route('login') }}" class="nav-link link-dark text-decoration-none">{{__('Login')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('register') }}" class="nav-link link-dark text-decoration-underline">{{__('Registration')}}</a>
+                        <a href="{{ route('register') }}" class="nav-link link-dark text-decoration-none">{{__('Registration')}}</a>
                     </li>
                 </ul>
             @endauth
@@ -83,7 +91,7 @@
                 <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
                 <button class="btn btn-outline-success" type="submit">Поиск</button>
             </form>
-            <div class="col-xl-2">
+            <div class="col-xl-2 text-center">
                 <a href="{{route('cart')}}" class="text-decoration-none link-dark">
                     <i class="bi-cart"></i>
                     {{__('Cart')}}

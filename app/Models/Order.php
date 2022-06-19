@@ -52,9 +52,9 @@ class Order extends Model
     public function saveOrder($request)
     {
         if($this->invoice == 0){
+            $randomValue = random_int(100000, 999999);
             $this->address = $request->address;
-            $this->user_id = session('orderId');
-            $this->invoice = 'СФ-' . session('orderId') . $this->getTotalCost() . '-' . $this->getTotalAmount();
+            $this->invoice = 'СФ-' . session('orderId') . $randomValue . '-' . $this->getTotalAmount();
             $this->quantity = $this->getTotalAmount();
             $this->sum = $this->getTotalCost();
             $this->save();
