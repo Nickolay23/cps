@@ -23,4 +23,9 @@ class Service extends Model
     {
         return $this->belongsToMany(Work::class)->withTimestamps();
     }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
 }
