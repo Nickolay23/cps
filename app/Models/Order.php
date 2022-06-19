@@ -19,6 +19,14 @@ class Order extends Model
         return $this->belongsToMany(Sparepart::class)->withPivot('amount', 'price')->withTimestamps();
     }
 
+    public function pay(){
+        return $this->hasOne(Pay::class);
+    }
+
+    public function outcome(){
+        return $this->hasOne(Outcome::class);
+    }
+
     public function getTotalAmount()
     {
         $sum = 0;

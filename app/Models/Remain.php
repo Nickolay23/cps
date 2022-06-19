@@ -17,4 +17,14 @@ class Remain extends Model
     {
         return $this->belongsTo(Sparepart::class);
     }
+
+    public function incomes()
+    {
+        return $this->belongsToMany(Income::class);
+    }
+
+    public function outcomes()
+    {
+        return $this->belongsToMany(Outcome::class);
+    }
 }

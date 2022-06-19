@@ -14,4 +14,9 @@ class Supplier extends Model
         'description',
         'image',
     ];
+
+    public function incomes()
+    {
+        return $this->hasMany(Income::class);
+    }
 }

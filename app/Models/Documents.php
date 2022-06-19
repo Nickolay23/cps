@@ -10,4 +10,9 @@ class Documents extends Model
     use HasFactory;
 
     protected $fillable = ['name'];
+
+    public function pays()
+    {
+        return $this->hasMany(Pay::class);
+    }
 }
