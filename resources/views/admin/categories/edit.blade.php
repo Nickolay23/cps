@@ -30,8 +30,7 @@
         <div class="row mb-3">
             <label for="description" class="col-sm-2 col-form-label">{{__('Description')}}</label>
             <div class="col-sm-10">
-                <textarea name="description" class="form-control" id="description">{{$category->description}}
-                </textarea>
+                <textarea name="description" class="form-control" id="description">{{$category->description}}</textarea>
             </div>
         </div>
         <div class="row mb-3">

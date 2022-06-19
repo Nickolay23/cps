@@ -11,7 +11,11 @@ class Order extends Model
 
     protected $fillable = [
         'user_id',
-        'status',
+        'pay_id',
+        'invoice',
+        'address',
+        'quantity',
+        'sum',
     ];
 
     public function spareparts()
@@ -43,5 +47,21 @@ class Order extends Model
             $sum += $sparepart->sparepartCost();
         }
         return $sum;
+    }
+
+    public function saveOrder($request)
+    {
+        if($this->invoice == 0){
+            $this->address = $request->address;
+            $this->user_id = session('orderId');
+            $this->invoice = 'СФ-' . session('orderId') . $this->getTotalCost() . '-' . $this->getTotalAmount();
+            $this->quantity = $this->getTotalAmount();
+            $this->sum = $this->getTotalCost();
+            $this->save();
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }
