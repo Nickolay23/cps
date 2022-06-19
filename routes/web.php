@@ -47,3 +47,4 @@ Route::group(['middleware' => 'auth'], function (){
 });
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('index');
+Route::get('/{category}', [\App\Http\Controllers\CategoryController::class, 'category'])->name('category');
