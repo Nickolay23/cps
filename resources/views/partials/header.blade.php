@@ -72,10 +72,10 @@
                         {{__('Catalog')}}
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownLink">
-                        <li><a class="dropdown-item" href="#">Действие</a></li>
-                        <li><a class="dropdown-item" href="#">Другое действие</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Что-то еще здесь</a></li>
+                        @foreach($categories as $category)
+                            <li><a class="dropdown-item" href="{{ route('category', $category->code) }}">{{$category->name}}</a></li>
+                        @endforeach
+{{--                        <li><hr class="dropdown-divider"></li>--}}
                     </ul>
                 </li>
             </ul>
