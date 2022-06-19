@@ -7,6 +7,9 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+// Icons
+@import '~bootstrap-icons/font/bootstrap-icons';
+
  html .wrapper {
      padding-left: var(--cui-sidebar-occupy-start,0);
  }

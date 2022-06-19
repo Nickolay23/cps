@@ -1,9 +1,9 @@
 <div class="container-fluid">
-    <div class="d-flex">
+    <div class="d-flex flex-wrap">
         <div class="flex-fill">
             <ul class="nav">
                 <li class="nav-item">
-                    <a href="#" class="nav-link link-dark">{{__('Main')}}</a>
+                    <a href="{{route('index')}}" class="nav-link link-dark">{{__('Main')}}</a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link link-dark">{{__('Pay and delivery')}}</a>
@@ -14,15 +14,24 @@
             </ul>
         </div>
         <div class="flex-fill">
+            <p class="pt-2 pb-0">Zap82shop.ru</p>
+        </div>
+        <div class="flex-fill">
+            <a href="#" class="justify-content-center nav-link link-dark">
+                <i class="bi-telephone-fill"></i>
+                +7978-123-12-12
+            </a>
+        </div>
+        <div class="flex-fill">
             @auth
-                <ul class="header-nav ms-3">
+                <ul class="header-nav justify-content-end">
                     <li class="nav-item dropdown">
-                        <a class="nav-link py-0" data-coreui-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                             <div>{{auth()->user()->name}}</div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end pt-0">
                             <div class="dropdown-header bg-light py-2">
-                                <div class="fw-semibold">Account</div>
+                                <div class="fw-semibold">{{__('Account')}}</div>
                             </div>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
@@ -39,7 +48,7 @@
                     </li>
                 </ul>
             @else
-                <ul class="nav justify-content-center">
+                <ul class="nav justify-content-end">
                     <li class="nav-item">
                         <a href="{{ route('login') }}" class="nav-link link-dark text-decoration-underline">{{__('Login')}}</a>
                     </li>
@@ -51,7 +60,38 @@
         </div>
     </div>
 </div>
-
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Переключатель навигации">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse gx-2" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 col-xl-2">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {{__('Catalog')}}
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownLink">
+                        <li><a class="dropdown-item" href="#">Действие</a></li>
+                        <li><a class="dropdown-item" href="#">Другое действие</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Что-то еще здесь</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="d-flex col-xl-8">
+                <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
+                <button class="btn btn-outline-success" type="submit">Поиск</button>
+            </form>
+            <div class="col-xl-2">
+                <a href="#" class="text-decoration-none link-dark">
+                    <i class="bi-cart"></i>
+                    {{__('Cart')}}
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
 {{--<div class="container-fluid">--}}
 {{--    <ul class="header-nav ms-3">--}}
 {{--        <li class="nav-item dropdown"><a class="nav-link py-0" data-coreui-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">--}}
