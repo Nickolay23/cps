@@ -41,6 +41,7 @@ Route::group(['middleware' => 'auth'], function (){
         Route::resource('services', \App\Http\Controllers\Admin\ServiceController::class);
         Route::resource('reviews', \App\Http\Controllers\Admin\ReviewController::class);
         Route::resource('suppliers', \App\Http\Controllers\Admin\SupplierController::class);
+        Route::resource('orders', \App\Http\Controllers\Admin\OrdeController::class);
     });
 
     Route::group([
@@ -53,4 +54,11 @@ Route::group(['middleware' => 'auth'], function (){
 });
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('index');
+Route::group([
+    'prefix' => 'cart',
+], function () {
+    Route::get('/', [\App\Http\Controllers\CartController::class, 'index'])->name('cart');
+    Route::post('/add/{sparepart}', [\App\Http\Controllers\CartController::class, 'cartAdd'])->name('cart-add');
+    Route::post('/remove/{sparepart}', [\App\Http\Controllers\CartController::class, 'cartRemove'])->name('cart-remove');
+});
 Route::get('/{category}', [\App\Http\Controllers\CategoryController::class, 'category'])->name('category');
