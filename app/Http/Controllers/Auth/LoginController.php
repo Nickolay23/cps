@@ -31,9 +31,10 @@ class LoginController extends Controller
     protected function redirectTo()
     {
         if (auth()->user()->is_admin) {
-            return '/admin';
+            return route('admin.admin');
         }
-        return RouteServiceProvider::HOME;
+        return route('users.home');
+//        return RouteServiceProvider::HOME;
     }
 
     /**

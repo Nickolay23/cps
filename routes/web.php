@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
 
@@ -36,5 +36,14 @@ Route::group(['middleware' => 'auth'], function (){
         Route::resource('carmodels', \App\Http\Controllers\Admin\CarmodelController::class);
         Route::resource('partmanufacturers', \App\Http\Controllers\Admin\PartmanufacturerController::class);
     });
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+    Route::group([
+        'prefix' => 'user',
+        'as' => 'users.',
+    ], function () {
+        Route::get('/', [App\Http\Controllers\User\ProfileController::class, 'index'])->name('home');
+    });
+//    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 });
+
+Route::get('/', [\App\Http\Controllers\HomeController::class, 'index']);
