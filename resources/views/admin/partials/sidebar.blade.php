@@ -78,6 +78,14 @@
                     {{__('Part manufacturers')}}
                 </a>
             </li>
+            <li class="nav-group">
+                <a class="nav-link text-wrap" href="{{route('admin.works.index')}}">
+                    <svg class="nav-icon">
+                        <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-puzzle"></use>
+                    </svg>
+                    {{__('Works')}}
+                </a>
+            </li>
         @endif
         {{--        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">--}}
         {{--                <svg class="nav-icon">--}}
