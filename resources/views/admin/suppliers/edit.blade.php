@@ -1,26 +1,26 @@
 @extends('layouts.admin')
 
 @section('content')
-    <h3>{{__('Edit manufacturer')}} {{$manufacturer->manufacturer}}</h3>
+    <h3>{{__('Edit supplier')}} {{$supplier->name}}</h3>
     <div class="mb-4 d-flex justify-content-end">
-        <a href="{{route('admin.manufacturers.index')}}" class="btn btn-dark" role="button">{{__('Manufacturers list')}}</a>
+        <a href="{{route('admin.suppliers.index')}}" class="btn btn-dark" role="button">{{__('Suppliers list')}}</a>
     </div>
-    <form action="{{route('admin.manufacturers.update', $manufacturer)}}" method="POST" enctype="multipart/form-data">
+    <form action="{{route('admin.suppliers.update', $supplier)}}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="row mb-3">
-            <label for="manufacturer" class="col-sm-2 col-form-label">{{__('Manufacturer')}}</label>
+            <label for="name" class="col-sm-2 col-form-label">{{__('Supplier')}}</label>
             <div class="col-sm-10">
-                @error('manufacturer')
+                @error('name')
                 <div class="alert alert-danger pt-1 pb-1">{{$message}}</div>
                 @enderror
-                <input type="text" name="manufacturer" class="form-control" id="manufacturer" value="{{$manufacturer->manufacturer}}">
+                <input type="text" name="name" class="form-control" id="name" value="{{$supplier->name}}">
             </div>
         </div>
         <div class="row mb-3">
             <label for="description" class="col-sm-2 col-form-label">{{__('Description')}}</label>
             <div class="col-sm-10">
-                <textarea name="description" class="form-control" id="description">{{$manufacturer->description}}</textarea>
+                <textarea name="description" class="form-control" id="description">{{$supplier->description}}</textarea>
             </div>
         </div>
         <div class="row mb-3">
