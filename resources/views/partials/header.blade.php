@@ -84,9 +84,12 @@
                 <button class="btn btn-outline-success" type="submit">Поиск</button>
             </form>
             <div class="col-xl-2">
-                <a href="#" class="text-decoration-none link-dark">
+                <a href="{{route('cart')}}" class="text-decoration-none link-dark">
                     <i class="bi-cart"></i>
                     {{__('Cart')}}
+                    @if(session()->has('cartItems'))
+                        {{session()->get('cartItems')}}
+                    @endif
                 </a>
             </div>
         </div>

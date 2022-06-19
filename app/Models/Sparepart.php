@@ -42,4 +42,18 @@ class Sparepart extends Model
     {
         return $this->belongsToMany(Service::class)->withTimestamps();
     }
+
+    public function remain(){
+        return $this->hasOne(Remain::class);
+    }
+
+    public function sparepartCost()
+    {
+        if(!is_null($this->pivot)){
+            return $this->price * $this->pivot->amount;
+        }
+        else{
+            return $this->price;
+        }
+    }
 }
