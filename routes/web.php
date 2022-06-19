@@ -13,13 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/welcome', function () {
-    return view('welcome');
-});
-
 Auth::routes();
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => 'auth'], function (){
     Route::group([
@@ -28,7 +22,6 @@ Route::group(['middleware' => 'auth'], function (){
         'middleware' => 'is_admin'
     ], function () {
         Route::get('/', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin');
-        Route::resource('pages', \App\Http\Controllers\Admin\PageController::class);
         Route::resource('users', \App\Http\Controllers\Admin\UserController::class);
         Route::resource('categories', \App\Http\Controllers\Admin\CategoryController::class);
         Route::resource('spareparts', \App\Http\Controllers\Admin\SparepartController::class);
@@ -50,7 +43,6 @@ Route::group(['middleware' => 'auth'], function (){
     ], function () {
         Route::get('/', [App\Http\Controllers\User\ProfileController::class, 'index'])->name('home');
     });
-//    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 });
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('index');

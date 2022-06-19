@@ -23,11 +23,11 @@
                         <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-menu"></use>
                     </svg>
                 </button>
-                <ul class="header-nav d-none d-md-flex">
-                    <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Users</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
-                </ul>
+{{--                <ul class="header-nav d-none d-md-flex">--}}
+{{--                    <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>--}}
+{{--                    <li class="nav-item"><a class="nav-link" href="#">Users</a></li>--}}
+{{--                    <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>--}}
+{{--                </ul>--}}
                 <ul class="header-nav ms-3">
                     <li class="nav-item dropdown">
                         <a class="nav-link py-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
