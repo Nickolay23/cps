@@ -137,6 +137,7 @@ return [
     'attributes' => [
         'carmodel_id' => 'Модель автомобиля',
         'code' => 'Код',
+        'feature_group_id' => 'Группа характеристики',
         'finish_year' => 'Год окончания производства',
         'manufacturer' => 'Производитель',
         'manufacturer_id' => 'Производитель',
@@ -144,6 +145,5 @@ return [
         'part_manufacturer' => 'Производитель',
         'sku' => 'Артикул',
         'start_year' => 'Год начала производств',
-        'finish_year' => 'Год окончания производства',
     ],
 ];
