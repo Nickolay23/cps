@@ -40,6 +40,7 @@ Route::group(['middleware' => 'auth'], function (){
         Route::resource('works', \App\Http\Controllers\Admin\WorkController::class);
         Route::resource('services', \App\Http\Controllers\Admin\ServiceController::class);
         Route::resource('reviews', \App\Http\Controllers\Admin\ReviewController::class);
+        Route::resource('suppliers', \App\Http\Controllers\Admin\SupplierController::class);
     });
 
     Route::group([
