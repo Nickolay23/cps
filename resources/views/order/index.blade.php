@@ -44,18 +44,6 @@
                         </div>
                     @endforeach
                 </div>
-
-{{--            <div class="page-cart__footer">--}}
-{{--                <div class="page-cart__footer-price-wrap">--}}
-{{--                    <p class="page-cart__footer-price-title">{{__('Total') . ':'}}</p>--}}
-{{--                    <p class="page-cart__footer-price">--}}
-{{--                        {{$order->getTotalAmount()}} {{__('Item on')}} {{$order->getTotalCost()}} <span>&#8381;</span>--}}
-{{--                    </p>--}}
-{{--                </div>--}}
-{{--                <div class="page-cart__footer-btns">--}}
-{{--                    <a href="{{route('order-create')}}" class="page-cart__footer-btn btn btn-primary" role="button">{{__('Place an order')}}</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
             </div>
     @else
         <div class="page-cart">

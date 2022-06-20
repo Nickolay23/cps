@@ -40,7 +40,7 @@
                 <div class="row justify-content-center mt-5">
                     <div class="col-md-8">
                         <div class="card profile-page__card">
-                            <div class="row">
+                            <div class="row m-3">
                                 <div class="col-md-4">
                                     <div>
                                         <a href="{{route('cart')}}" class="text-decoration-underline">{{__('Cart')}}</a>
