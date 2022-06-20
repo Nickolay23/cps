@@ -6,13 +6,16 @@ use App\Http\Requests\OrderRequest;
 use App\Models\Category;
 use App\Models\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
     public function index()
     {
         $categories = Category::get();
-        return view('order.index', compact('categories'));
+        $user_id = Auth::user()->id;
+        $orders = Order::where('user_id',$user_id)->get();
+        return view('order.index', compact('categories', 'orders'));
     }
 
     public function create()

@@ -48,7 +48,7 @@
                                     <a class="dropdown-item" href="{{route('users.order-index')}}">
                                         <i class="bi bi-journal-check"></i> {{__('Orders')}}
                                     </a>
-                                    <a class="dropdown-item" href="#">
+                                    <a class="dropdown-item" href="{{route('users.user-cars')}}">
                                         <i class="bi bi-wrench-adjustable"></i> {{__('Garage')}}
                                     </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
