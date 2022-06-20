@@ -4,71 +4,67 @@
 
 @section('content')
 
-    {{__('Cart')}}
     @if(!is_null($order))
-        <table class="table">
-            <thead class="table-secondary">
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">{{__('Name')}}</th>
-                <th scope="col">{{__('Amount')}}</th>
-                <th scope="col">{{__('Price')}}</th>
-                <th scope="col">{{__('Cost')}}</th>
-            </tr>
-            </thead>
-            <tbody>
-            @foreach($order->spareparts as $sparepart)
-                <tr>
-                    <th scope="row">{{$loop->iteration}}</th>
-                    <td>{{$sparepart->name}}</td>
-                    <td class="d-inline-flex w-75">
-                        <form action="{{route('cart-remove', $sparepart)}}" method="POST">
-                            @csrf
-                            <button type="submit"><span>-</span></button>
-                        </form>
-                        <div class="mx-1 px-1 pt-1 border border-dark border-1 w-25 h-25 text-center">{{$sparepart->pivot->amount}}</div>
-                        <form action="{{route('cart-add', $sparepart)}}" method="POST">
-                            @csrf
-                            <button type="submit"><span>+</span></button>
-                        </form>
-                    </td>
-                    <td>{{$sparepart->price}} &#8381;</td>
-                    <td>
-                        {{$sparepart->sparepartCost()}} &#8381;
-                        {{--                        <div class="btn-group" role="group">--}}
-                        {{--                            <a href="{{route('admin.categories.show', $category)}}" class="m-1 btn btn-sm btn-success">{{__('Open')}}</a>--}}
-                        {{--                            @can('update', $category)--}}
-                        {{--                                <a href="{{route('admin.categories.edit', $category)}}" class="m-1 btn btn-sm btn-warning">{{__('Edit')}}</a>--}}
-                        {{--                            @endcan--}}
-                        {{--                            @can('delete', $category)--}}
-                        {{--                                <form action="{{ route('admin.categories.destroy', $category) }}" method="POST">--}}
-                        {{--                                    @csrf--}}
-                        {{--                                    @method('DELETE')--}}
-                        {{--                                    <button class="m-1 btn btn-sm btn-danger" type="submit"--}}
-                        {{--                                            onclick="return confirm('{{ __('Are you sure?') }}')"> {{__('Delete')}}</button>--}}
-                        {{--                                </form>--}}
-                        {{--                            @endcan--}}
-                        {{--                        </div>--}}
-                    </td>
-                </tr>
-            @endforeach
-            </tbody>
-            <tfoot>
-            <tr>
-                <td></td>
-                <td>{{__('Total') . ':'}}</td>
-                <td>{{$order->getTotalAmount()}}</td>
-                <td></td>
-                <td>{{$order->getTotalCost()}} &#8381;</td>
-            </tr>
-            </tfoot>
-        </table>
-        <div class="mb-4 d-flex justify-content-end">
-            <a href="{{route('order-create')}}" class="btn btn-dark" role="button">{{__('Place an order')}}</a>
+        <div class="page-cart">
+            <div class="page-cart__container container">
+                <div class="page-cart__title title--size-32">{{__('Cart')}}</div>
+                @foreach($order->spareparts as $sparepart)
+                    <div class="page-cart__items">
+                        <div class="cart-card">
+                            <div class="cart-card__left">
+                                <div class="cart-card__img" style="background-image: url({{Storage::url($sparepart->image)}})"></div>
+                                <div class="cart-card__meta">
+                                    <h5 class="cart-card__title">{{$sparepart->name}}</h5>
+                                </div>
+                            </div>
+                            <div class="cart-card__right">
+                                <div class="cart-card__counter-wrap">
+                                    <form action="{{route('cart-remove', $sparepart)}}" method="POST" class="cart-card__counter-btn-wrap">
+                                        @csrf
+                                        <button type="submit" class="cart-card__counter-btn is-decr"><span>-</span></button>
+                                    </form>
+                                    <div class="cart-card__counter-value" >{{$sparepart->pivot->amount}}</div>
+                                    <form action="{{route('cart-add', $sparepart)}}" method="POST" class="cart-card__counter-btn-wrap">
+                                        @csrf
+                                        <button type="submit" class="cart-card__counter-btn is-incr"><span>+</span></button>
+                                    </form>
+                                </div>
+                                <div class="cart-card__price-wrap">
+                                    <p class="cart-card__price-title">{{__('Price')}}:</p>
+                                    <p class="cart-card__price">{{$sparepart->price}} <span>&#8381;</p>
+                                </div>
+                                <div class="cart-card__price-wrap">
+                                    <p class="cart-card__price-title">{{__('Cost')}}</p>
+                                    <p class="cart-card__price">{{$sparepart->sparepartCost()}} <span>&#8381;</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+
+            <div class="page-cart__footer">
+                <div class="page-cart__footer-price-wrap">
+                    <p class="page-cart__footer-price-title">{{__('Total') . ':'}}</p>
+                    <p class="page-cart__footer-price">
+                        {{$order->getTotalAmount()}} {{__('Item on')}} {{$order->getTotalCost()}} <span>&#8381;</span>
+                    </p>
+                </div>
+                <div class="page-cart__footer-btns">
+                    <a href="{{route('order-create')}}" class="page-cart__footer-btn btn btn-primary" role="button">{{__('Place an order')}}</a>
+                </div>
+            </div>
         </div>
     @else
-        <div>
-            {{__('No products in cart')}}
+        <div class="page-cart">
+            <div class="page-cart__container container">
+                <div class="page-cart__title title--size-32">
+                    {{__('Cart')}}
+                </div>
+                <div class="title--size-20">
+                    {{__('No products in cart')}}
+                </div>
+            </div>
         </div>
     @endif
 @endsection

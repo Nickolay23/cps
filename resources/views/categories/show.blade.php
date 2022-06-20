@@ -3,39 +3,41 @@
 @section('title', $category->name)
 
 @section('content')
-    <div>
-        {{$category->name}}
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-2">
-                Фильтр
-            </div>
-            <div class="col-10">
+
+    <div class="page">
+        <div class="page__container container">
+            <h1 class="page__title">{{$category->name}}</h1>
+            <div class="page__section page__products-wrap">
+                <div class="page__products-filter">
+                    Фильтр
+                </div>
+                <div class="page__products cards-list size-1x1x1x1x">
                 @foreach($spareparts as $sparepart)
-                    <div class="row">
-                        <div class="col-2 col-xl-2">
-                            <img src="{{Storage::url($sparepart->image)}}" class="img-thumbnail" alt="{{$sparepart->name}}" width="100px" height="100px" />
+                    <div class="cs-card">
+                        <div class="cs-card__img-wrap">
+                            <img src="{{Storage::url($sparepart->image)}}" class="cs-card__img" />
                         </div>
-                        <div class="col-4 col-xl-4">
-                            {{$sparepart->name}}
-                        </div>
-                        <div class="col-1 col-xl-1">
-                            {{$sparepart->sku}}
-                        </div>
-                        <div class="col-1 col-xl-1">
-                            {{$sparepart->price}} &#8381;
-                        </div>
-                        <div class="col-2 col-xl-2">
-                            <form method="POST" action="{{route('cart-add', $sparepart)}}" enctype="multipart/form-data">
-                                @csrf
-                                <button type="submit" id="add_cart" class="btn btn-outline-success ">
-                                    {{ __('Add to cart') }}
-                                </button>
-                            </form>
+                        <div class="cs-card__details">
+                            <div class="cs-card__meta">
+                                <h5 class="cs-card__title">{{$sparepart->name}}</h5>
+                                <p class="cs-card__subtitle">{{$sparepart->sku}}</p>
+                            </div>
+                            <div class="cs-card__footer">
+                                <div class="cs-card__price">
+                                    {{$sparepart->price}}
+                                    <span>&#8381;</span>
+                                </div>
+                                <form class="cs-card__btns" method="POST" action="{{route('cart-add', $sparepart)}}" enctype="multipart/form-data" >
+                                    @csrf
+                                    <button type="submit" id="add_cart" class="cs-card__btn btn btn-primary ">
+                                        {{ __('Add to cart') }}
+                                    </button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 @endforeach
+                </div>
             </div>
         </div>
     </div>

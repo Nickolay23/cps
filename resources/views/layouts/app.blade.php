@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.5.5/css/perfect-scrollbar.css" integrity="sha512-2xznCEl5y5T5huJ2hCmwhvVtIGVF1j/aNUEJwi/BzpWPKEzsZPGpwnP1JrIMmjPpQaVicWOYVu8QvAIg9hwv9w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 
-    {{--    <title>{{ config('app.name', 'Laravel') }}</title>--}}
     <title>{{__('Оnline_shop')}}: @yield('title')</title>
 </head>
 <body class="c-app">
@@ -36,7 +35,7 @@
 
     {{--            02052022--}}
     {{--        </header>--}}
-    <div class="body flex-grow-1 px-3">
+    <div class="page-wrapper">
         @include('partials.header')
         @if(session()->has('success'))
             <p class="alert alert-success">{{ session()->get('success') }}</p>
