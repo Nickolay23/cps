@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Sparepart;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -25,7 +26,8 @@ class HomeController extends Controller
     public function index()
     {
         $categories = Category::get();
-        return view('index', compact('categories'));
+        $topSpareparts = Sparepart::limit(4)->get();
+        return view('index', compact('categories', 'topSpareparts'));
     }
 
     public function delivery()
