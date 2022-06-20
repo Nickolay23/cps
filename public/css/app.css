@@ -17498,3 +17498,12 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   line-height: 24px;
   font-weight: 500;
 }
+
+.profile-page {
+  width: 100%;
+  padding-top: 40px;
+  padding-bottom: calc(var(--cartFooterHeight) + 40px);
+}
+.profile-page__card {
+  padding: 40px 20px 0;
+}
