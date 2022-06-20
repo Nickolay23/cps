@@ -50,6 +50,8 @@ Route::group(['middleware' => 'auth'], function (){
 });
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('index');
+Route::get('/delivery', [\App\Http\Controllers\HomeController::class, 'delivery'])->name('delivery');
+Route::get('/contacts', [\App\Http\Controllers\HomeController::class, 'contact'])->name('contacts');
 Route::get('/order/create', [\App\Http\Controllers\OrderController::class, 'create'])->name('order-create');
 Route::post('/order/create', [\App\Http\Controllers\OrderController::class, 'confirm'])->name('order-confirm');
 Route::group([

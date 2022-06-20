@@ -17,6 +17,19 @@
             </div>
         </div>
         <div class="row mb-3">
+            <label for="city" class="col-sm-2 col-form-label">{{__('City')}}</label>
+            <div class="col-sm-10">
+                <select name="city" class="form-select" id="city">
+                    <option selected>{{__('Choose city')}}</option>
+                    <option value="Симферополь">Симферополь</option>
+                    <option value="Севастополь">Севастополь</option>
+                    <option value="Ялта">Ялта</option>
+                    <option value="Москва">Москва</option>
+                    <option value="Санкт-Петербург">Санкт-Петербург</option>
+                </select>
+            </div>
+        </div>
+        <div class="row mb-3">
             <label for="address" class="col-sm-2 col-form-label">{{__('Address')}}</label>
             <div class="col-sm-10">
                 <textarea name="address" class="form-control" id="address">{{old('address')}}</textarea>

@@ -6,10 +6,10 @@
                     <a href="{{route('index')}}" class="nav-link link-dark">{{__('Main')}}</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link link-dark">{{__('Pay and delivery')}}</a>
+                    <a href="{{route('delivery')}}" class="nav-link link-dark">{{__('Pay and delivery')}}</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link link-dark">{{__('Contacts')}}</a>
+                    <a href="{{route('contacts')}}" class="nav-link link-dark">{{__('Contacts')}}</a>
                 </li>
             </ul>
         </div>
@@ -41,6 +41,9 @@
                                 </a>
                                 <a class="dropdown-item" href="{{route('users.order-index')}}">
                                     <i class="bi bi-journal-check"></i> {{__('Orders')}}
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="bi bi-wrench-adjustable"></i> {{__('Garage')}}
                                 </a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                           onclick="event.preventDefault();
