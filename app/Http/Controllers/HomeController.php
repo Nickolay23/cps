@@ -26,6 +26,17 @@ class HomeController extends Controller
     {
         $categories = Category::get();
         return view('index', compact('categories'));
-        return view('index');
+    }
+
+    public function delivery()
+    {
+        $categories = Category::get();
+        return view('delivery', compact('categories'));
+    }
+
+    public function contact()
+    {
+        $categories = Category::get();
+        return view('contacts', compact('categories'));
     }
 }
