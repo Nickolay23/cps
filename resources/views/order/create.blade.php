@@ -23,11 +23,11 @@
                                 </div>
                                 <div class="cart-card__price-wrap">
                                     <p class="cart-card__price-title">{{__('Price')}}:</p>
-                                    <p class="cart-card__price">{{$sparepart->price}} <span>&#8381;</p>
+                                    <p class="cart-card__price">{{$sparepart->price}} <span>&#8381;</span></p>
                                 </div>
                                 <div class="cart-card__price-wrap">
                                     <p class="cart-card__price-title">{{__('Cost')}}</p>
-                                    <p class="cart-card__price">{{$sparepart->sparepartCost()}} <span>&#8381;</p>
+                                    <p class="cart-card__price">{{$sparepart->sparepartCost()}} <span>&#8381;</span></p>
                                 </div>
                             </div>
                         </div>
@@ -59,22 +59,5 @@
             </div>
         </form>
     </div>
-{{--    <div class="order-confirm container">--}}
-{{--        <form action="{{route('order-confirm')}}" method="POST">--}}
-{{--            @csrf--}}
-{{--            <div class="row mb-3">--}}
-{{--                <label for="address" class="col-sm-2 col-form-label order-confirm__Label text-end">{{__('Delivery address')}}</label>--}}
-{{--                <div class="col-sm-9">--}}
-{{--                    @error('address')--}}
-{{--                        <div class="alert alert-danger pt-1 pb-1">{{$message}}</div>--}}
-{{--                    @enderror--}}
-{{--                    <textarea name="address" class="form-control" id="address">{{old('address')}}</textarea>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <div class="mb-4 d-flex justify-content-end">--}}
-{{--                <button type="submit" class="btn btn-dark">{{__('Confirm')}}</button>--}}
-{{--            </div>--}}
-{{--        </form>--}}
-{{--    </div>--}}
 @endsection
 

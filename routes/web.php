@@ -47,6 +47,7 @@ Route::group(['middleware' => 'auth'], function (){
         Route::get('/', [App\Http\Controllers\User\ProfileController::class, 'index'])->name('home');
         Route::get('/edit/{id}', [App\Http\Controllers\User\ProfileController::class, 'edit'])->name('user-edit');
         Route::get('/orders', [App\Http\Controllers\OrderController::class, 'index'])->name('order-index');
+        Route::get('/cars', [App\Http\Controllers\User\ProfileController::class, 'cars'])->name('user-cars');
     });
 });
 

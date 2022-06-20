@@ -59,7 +59,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div>
-                                        <a href="#" class="text-decoration-underline">{{__('Garage')}}</a>
+                                        <a href="{{route('users.user-cars')}}" class="text-decoration-underline">{{__('Garage')}}</a>
                                     </div>
                                     <div class="mt-2 fs-6">
                                         Сохраняйте транспортные средства для поиска деталей в каталогах

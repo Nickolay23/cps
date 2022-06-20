@@ -13,4 +13,10 @@ class ProfileController extends Controller
         $categories = Category::get();
         return view('users.index', compact('categories'));
     }
+
+    public function cars()
+    {
+        $categories = Category::get();
+        return view('users.cars', compact('categories'));
+    }
 }

@@ -31,11 +31,11 @@
                                 </div>
                                 <div class="cart-card__price-wrap">
                                     <p class="cart-card__price-title">{{__('Price')}}:</p>
-                                    <p class="cart-card__price">{{$sparepart->price}} <span>&#8381;</p>
+                                    <p class="cart-card__price">{{$sparepart->price}} <span>&#8381;</span></p>
                                 </div>
                                 <div class="cart-card__price-wrap">
                                     <p class="cart-card__price-title">{{__('Cost')}}</p>
-                                    <p class="cart-card__price">{{$sparepart->sparepartCost()}} <span>&#8381;</p>
+                                    <p class="cart-card__price">{{$sparepart->sparepartCost()}} <span>&#8381;</span></p>
                                 </div>
                             </div>
                         </div>
