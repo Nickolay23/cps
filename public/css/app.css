@@ -17417,6 +17417,11 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   width: 100%;
   padding-right: 24px;
 }
+.cart-card__block {
+  align-items: center;
+  width: 100%;
+  padding: 0 24px;
+}
 .cart-card__img {
   flex: none;
   width: 160px;
@@ -17440,6 +17445,20 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   width: 200px;
 }
 .cart-card__right > * + * {
+  margin-top: 8px;
+}
+.cart-card__right-big {
+  flex: none;
+  width: 350px;
+}
+.cart-card__right-big > * + * {
+  margin-top: 8px;
+}
+.cart-card__right-large {
+  flex: none;
+  width: 450px;
+}
+.cart-card__right-large > * + * {
   margin-top: 8px;
 }
 .cart-card__counter-wrap {

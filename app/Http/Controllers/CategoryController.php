@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\FeatureGroup;
 use App\Models\Order;
+use App\Models\Service;
 use App\Models\Sparepart;
 use Illuminate\Http\Request;
 
@@ -25,6 +27,9 @@ class CategoryController extends Controller
         $category = Category::where('code', $code)->first();
         $categories = Category::get();
         $spareparts = Sparepart::where('category_id', $category->id)->get();
-        return view('categories.show', compact('category', 'categories', 'spareparts'));
+        $services = Service::get();
+        $promoSpareparts = Sparepart::where('category_id', 7)->get();
+        $featureGroups = FeatureGroup::get();
+        return view('categories.show', compact('category', 'categories', 'spareparts', 'services', 'promoSpareparts', 'featureGroups'));
     }
 }

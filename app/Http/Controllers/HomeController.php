@@ -26,7 +26,7 @@ class HomeController extends Controller
     public function index()
     {
         $categories = Category::get();
-        $topSpareparts = Sparepart::limit(4)->get();
+        $topSpareparts = Sparepart::limit(5)->get();
         return view('index', compact('categories', 'topSpareparts'));
     }
 
