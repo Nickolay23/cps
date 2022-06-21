@@ -431,6 +431,12 @@ h1,h2,h3,h4,h5,h6 {
         padding-right: 24px;
     }
 
+    &__block {
+        align-items: center;
+        width: 100%;
+        padding: 24px;
+    }
+
     &__img {
         flex: none ;
         width: 160px;
@@ -462,6 +468,13 @@ h1,h2,h3,h4,h5,h6 {
     &__right-big {
         flex: none;
         width: 350px;
+        &>*+* {
+            margin-top: 8px;
+        }
+    }
+    &__right-large {
+        flex: none;
+        width: 450px;
         &>*+* {
             margin-top: 8px;
         }
