@@ -29,7 +29,7 @@
                                 </div>
                             </div>
                         @endforeach
-                    <form>
+                    </form>
                 </div>
                 <div class="page__products cards-list size-1x1x1x1x">
                 @foreach($spareparts as $sparepart)
@@ -39,7 +39,7 @@
                         </div>
                         <div class="cs-card__details">
                             <div class="cs-card__meta">
-                                <h5 class="cs-card__title">{{$sparepart->name}}</h5>
+                                <h5 class="cs-card__title"><a href="{{route('sparepart', $sparepart->id)}}" class="text-decoration-none">{{$sparepart->name}}</a></h5>
                                 <p class="cs-card__subtitle">{{$sparepart->sku}}</p>
                             </div>
                             <div class="cs-card__footer">
@@ -59,9 +59,6 @@
                 @endforeach
                 </div>
             </div>
-
-
-
             <div class="page__section page__products-wrap">
                 <div class="page__products-filter"></div>
                 <div class="page-cart pb-0">
@@ -93,7 +90,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="page__section  page__products-wrap mt-0">
                 <div class="page__products-filter"></div>
                 <div class="page-cart">
@@ -126,9 +122,6 @@
                     </div>
                 </div>
             </div>
-
-
-
         </div>
     </div>
 @endsection
